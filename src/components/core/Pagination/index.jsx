@@ -16,11 +16,11 @@ export default function Pagination({ currentPage, totalPages, onPage }) {
   }
 
   return (
-    <div className="flex justify-center items-center gap-2 text-white">
+    <div className="flex flex-wrap justify-center items-center gap-2 text-white text-sm sm:text-base">
       <button
         onClick={() => onPage(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-3 py-2 rounded-lg glass disabled:opacity-50"
+        className="px-3 py-1 sm:py-2 rounded-lg glass disabled:opacity-50"
       >
         Previous
       </button>
@@ -30,12 +30,12 @@ export default function Pagination({ currentPage, totalPages, onPage }) {
           <button
             key={idx}
             onClick={() => onPage(item)}
-            className={`px-3 py-2 rounded-lg ${currentPage === Number(item) ? "bg-white/30 opacity-70" : "glass"}`}
+            className={`px-3 py-1 sm:py-2 rounded-lg ${currentPage === Number(item) ? "bg-white/30 opacity-70" : "glass"}`}
           >
             {item}
           </button>
         ) : (
-          <span key={idx} className="px-2">
+          <span key={idx} className="px-2 hidden xs:inline sm:inline">
             ...
           </span>
         )
@@ -44,7 +44,7 @@ export default function Pagination({ currentPage, totalPages, onPage }) {
       <button
         onClick={() => onPage(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-3 py-2 rounded-lg glass disabled:opacity-50"
+        className="px-3 py-1 sm:py-2 rounded-lg glass disabled:opacity-50"
       >
         Next
       </button>

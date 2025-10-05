@@ -154,12 +154,12 @@ export default function ListPokemonPage() {
             ))}
           </div>
         </>
-      )};
+      )}
       {pokemon.length > 0 && (
         <div
-          className="grid grid-cols-3 max-md:grid-cols-1 max-md:text-center gap-y-3 items-center"
+          className="flex flex-col sm:flex-row flex-wrap justify-center sm:justify-between items-center gap-3 text-center"
         >
-          <span className="text-white">
+          <span className="text-white text-sm sm:text-base">
             Page {currentPage} of {totalPages}
           </span>
           <Pagination
